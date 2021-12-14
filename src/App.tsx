@@ -1,7 +1,16 @@
+import React from 'react'
+import {useRoutes} from "./routes/index.router";
+
 function App() {
+
+    const authentication:boolean = false
+    const routes = useRoutes(authentication)
+
   return (
     <div>
-      <h1>Hey there</h1>
+        <React.Suspense fallback={<h1>Loading...</h1>}>
+            {routes}
+        </React.Suspense>
     </div>
   )
 }
