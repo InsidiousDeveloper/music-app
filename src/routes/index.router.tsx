@@ -3,6 +3,7 @@ import React from "react";
 
 const SignIn = React.lazy(() => import('../pages/signin'))
 const SignUp = React.lazy(() => import('../pages/signup'))
+const Home = React.lazy(() => import('../pages/home'))
 
 export const useRoutes = (isAuthenticated: boolean) => {
     console.log(SignUp)
@@ -18,7 +19,8 @@ export const useRoutes = (isAuthenticated: boolean) => {
 
     return (
         <Routes>
-
+            <Route path="/home" element={<Home />}/>
+            <Route path="*" element={<Navigate to="/home" />}/>
         </Routes>
     )
 }

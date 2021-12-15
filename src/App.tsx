@@ -1,17 +1,25 @@
 import React from 'react'
 import {useRoutes} from "./routes/index.router";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
 
-    const authentication:boolean = false
+    const authentication:boolean = true
     const routes = useRoutes(authentication)
 
   return (
-    <div>
+    <React.Fragment>
         <React.Suspense fallback={<h1>Loading...</h1>}>
-            {routes}
+            <div style={{display: 'flex'}}>
+                {
+                    authentication && <Sidebar />
+                }
+                <div className='routes-wrapper'>
+                    {routes}
+                </div>
+            </div>
         </React.Suspense>
-    </div>
+    </React.Fragment>
   )
 }
 

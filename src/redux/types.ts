@@ -1,3 +1,2 @@
 export const APP_LOADING = 'APP_LOADING'
-
-export {}
+export const FULL_SIDEBAR = 'FULL_SIDEBAR'
